@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="mortage-calc">
+    <div class="mortage-info">
+      <div class="mortage-info-header">
+        <h1>Mortage Calculator</h1>
+        <p>Clear All</p>
+      </div>
+      <div class="mortage-user-inputs">
+        <p>Mortage Amount</p>
+        <div class="mortage-amount">
+          <p>$</p>
+          <input type="text" id="mortage-amount">
+        </div>
+
+        <div class="years-and-interest">
+          <div class="mortage-term-container">
+            <p>Mortage Term</p>
+            <div class="term">
+              <input type="number" id="Term">
+              <p>years</p>
+            </div>
+          </div>
+  
+          <div class="mortage-interest-container">
+            <p>Interest Rate</p>
+            <div class="rate">
+              <input type="number" id="rate">
+              <p>%</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Mortage Type</p>
+        <div class="repayment">
+          <input type="radio" id="repayment" name="mortage_type" value="repayment">
+          <label for="repayment">Repayment</label>
+        </div>
+
+        <div class="interest_only">
+          <input type="radio" id="interest_only" name="mortage_type" value="interest_only">
+          <label for="interest_only">Interest Only</label>
+        </div>
+      </div>
+      <button class="submit-button">Calculate Repayment</button>
+    </div>
+    <div class="mortage-result">
+      <img src="assets/images/illustration-empty.svg" alt="icon calculator">
+      <h1>Results shown here</h1>
+      <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+:root {
+  --white: #FFFFFF;
+  --lime: #D8DB2F;
+  --lime-light:#ECED97;
+  --red: #D73328;
+  --state-900: #133041;
+  --state-700: #4E6E7E;
+  --state-500: #6B94A8;
+  --state-300: #9ABED5;
+  --state-100: #E4F4FD;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta';
+  src: url('../fonts/PlusJakartaSans-VariableFont_wght.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta';
+}
+
+
+body {
+  background-color: var(--state-100);
+  padding-top: 0.1px;
+}
+
+p {
+  font-size: 16px;
+}
+
+
+/*
+
+
+
+mortage calc css 
+
+
+
+*/
+
+
+
+.mortage-calc {
+  width: clamp(744px, 90%, 1008px);
+  height: 606px;
+  margin: calc((100vh - 606px)/2 - 10px) auto;
+  display: flex;
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+
+/*
+
+
+
+mortage user input 
+
+
+
+*/
+
+
+.mortage-info {
+  width: 50%;
+  padding: 40px 40px;
+}
+
+.mortage-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--state-900);
+  margin-bottom: 40px;
+}
+
+.mortage-info-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  min-width: 230px;
+}
+
+.mortage-info p {
+  color: var(--state-700);
+  min-width: 70px;
+}
+
+.mortage-user-inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+}
+
+
+
+/*
+
+
+
+input feilds
+
+
+
+*/
+
+
+
+.mortage-amount {
+  display: flex;
+  border: var(--state-500) solid 1px;
+  border-radius: 5px;
+  width: auto;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background-color: var(--state-100);
+}
+
+
+
+.years-and-interest {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.mortage-term-container, .mortage-interest-container {
+  flex: 1;
+}
+
+.term, .rate {
+  display: flex;
+  border: var(--state-500) solid 1px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--state-100);
+}
+
+.term input, .rate input, .mortage-amount input {
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+.term p, .rate p, .mortage-amount p {
+  display: flex;
+  height: 48px;
+  margin: 0px 12.5px;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+}
+
+input:active, input:hover, input:focus {
+  border: none; 
+  outline: none;
+}
+
+
+.repayment, .interest_only {
+  height: 48px;
+  border: 1px solid var(--state-500);
+  border-radius: 5px;
+  margin-top: 12px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.repayment:active, .interest_only:active {
+  border-color: var(--lime);
+}
+
+.repayment input, .interest_only input {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.repayment label, .interest_only label {
+  align-items: center;
+  cursor: pointer;
+  padding-left: 34px; /* Space for the circle */
+  font-size: 16px; /* Text size */
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+
+.repayment label::before, .interest_only label::before {
+  content: ' ';
+  width: 19px;
+  height: 19px;
+  border: solid 2px var(--state-700);
+  border-radius: 16px;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+
+.repayment input:checked + label::after, .interest_only input:checked + label::after {
+  content: ' ';
+  width: 14px;
+  height: 14px;
+  background-color: var(--lime);
+  border-radius: 10px;
+  position: absolute;
+  top: 16.5px;
+  left: 20.4px;
+}
+
+
+.repayment input:checked + label::before, .interest_only input:checked + label::before {
+  border-color: var(--lime);
+}
+
+
+
+
+.submit-button {
+  width: clamp(250px, 90%, 314px);
+  height: 56px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: var(--lime-light);
+  border-radius: 29px;
+  border: none;
+}
+
+
+
+
+/*
+
+
+
+martage result
+
+
+
+*/
+
+
+
+.mortage-result {
+  width: 50%;
+  background-color: var(--state-900);
+  border-radius: 20px;
+  border-bottom-left-radius: 84px;
+  border-top-left-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.mortage-result img {
+  width: 192px;
+  margin-bottom: 16px;
+}
+
+.mortage-result h1 {
+  font-size: 24px;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.mortage-result p {
+  font-size: 16px;
+  color: var(--state-300);
+  text-align: center;
+  margin: 16px auto;
+}
